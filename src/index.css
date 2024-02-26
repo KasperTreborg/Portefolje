@@ -1,4 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@keyframes rainbow {
+    0% {background-position: 0%;}
+    100% {background-position: -100%;}
+  }
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+    background-color: #dbeafe;
+}
+
+.rainbow-text {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 186% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s linear infinite;
+  }
+
+.navbar-link:after {
+    display:block;
+    content: '';
+    width: inherit;
+    border-bottom: solid 2px black;  
+    transform: scaleX(0);  
+    transition: transform 150ms ease-in-out;
+  }
+  
+.navbar-link:hover:after { transform: scaleX(1); }
