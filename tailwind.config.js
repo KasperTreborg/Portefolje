@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         RaleWay: ["Raleway", "sans-serif"],
+        Playfair: ["Playfair Display", "serif"],
       },
     },
   },

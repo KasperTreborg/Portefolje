@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
     return (
-        <nav className="flex flex-wrap items-center justify-between mx-auto p-6 pl-12 pr-12 font-RaleWay">
+        <nav className="flex flex-wrap items-center justify-between mx-auto p-6 pl-36 pr-36 font-RaleWay text-zinc-200">
 
             <div className="flex space-x-2">
                 <Link to="/">
-                    <span className="text-2xl">Kasper Treborg</span>
+                    <span className="text-2xl font-bold font-Playfair">Treborg</span>
                 </Link>
             </div>
 
