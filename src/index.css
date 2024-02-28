@@ -6,37 +6,53 @@
 @tailwind utilities;
 
 @keyframes rainbow {
-    0% {background-position: 0%;}
-    100% {background-position: -100%;}
-  }
+  0% {background-position: 0%;}
+  100% {background-position: -100%;}
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 html {
-    overflow: hidden;
-    height: 100%;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    overflow: auto;
-    background-color: #18181b;
+  height: 100%;
+  overflow: auto;
+  background-color: #18181b;
 }
 
 .rainbow-text {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
-    background-size: 186% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbow 5s linear infinite;
-  }
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
+  background-size: 186% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 10s linear infinite;
+}
 
 .navbar-link:after {
-    display:block;
-    content: '';
-    width: inherit;
-    border-bottom: solid 2px #e4e4e7;  
-    transform: scaleX(0);  
-    transition: transform 150ms ease-in-out;
-  }
+  display:block;
+  content: '';
+  width: inherit;
+  border-bottom: solid 2px #e4e4e7;  
+  transform: scaleX(0);  
+  transition: transform 150ms ease-in-out;
+}
   
 .navbar-link:hover:after { transform: scaleX(1); }
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+h2 {
+  color: white;
+  font-family: "Space Mono", monospace;
+}
