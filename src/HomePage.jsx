@@ -1,6 +1,6 @@
-import NavBar from './Components/navBar'
-import MovingBanner from './Components/movingBanner'
-import { hackerHover } from './Utils/hackerHover'
+import NavBar from './Components/NavBar'
+import MovingBanner from './Components/MovingBanner'
+import { hackerHover } from './Utils/HackerHover'
 
 export default function Home() {
 

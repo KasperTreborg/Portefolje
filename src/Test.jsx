@@ -1,4 +1,4 @@
-import NavBar from './Components/navBar'
+import NavBar from './Components/NavBar'
 
 export default function Test() {
     return (
