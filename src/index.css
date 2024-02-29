@@ -8,16 +8,20 @@
 @keyframes pulse {
   0% {
     border-color: #66afe9;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }
   50% {
     border-color: #66afe9;
-    box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 1);
   }
   100% {
     border-color: #66afe9;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   }
+}
+
+*{
+  scroll-behavior: smooth;
 }
 
 html {
@@ -52,6 +56,6 @@ li {
 
 .lightUpList:hover ~ .listOfProjects {
   border-color: #66afe9;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
   animation: pulse 1s infinite;
 }
