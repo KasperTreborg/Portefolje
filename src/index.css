@@ -5,14 +5,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes rainbow {
-  0% {background-position: 0%;}
-  100% {background-position: -100%;}
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes pulse {
+  0% {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    border-color: #66afe9;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
 }
 
 html {
@@ -26,33 +31,27 @@ body {
   background-color: #18181b;
 }
 
-.rainbow-text {
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
-  background-size: 186% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbow 10s linear infinite;
-}
-
 .navbar-link:after {
   display:block;
   content: '';
   width: inherit;
   border-bottom: solid 2px #e4e4e7;  
   transform: scaleX(0);  
-  transition: transform 150ms ease-in-out;
+  transition: transform 170ms ease-in-out;
 }
   
 .navbar-link:hover:after { transform: scaleX(1); }
 
-.animate-marquee {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 30s linear infinite;
+li {
+  font-family: 'Courier New', monospace;
 }
 
-h2 {
-  color: white;
-  font-family: "Space Mono", monospace;
+.listOfProjects {
+  transition: all 1s ease;
+}
+
+.lightUpList:hover ~ .listOfProjects {
+  border-color: #66afe9;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+  animation: pulse 1s infinite;
 }

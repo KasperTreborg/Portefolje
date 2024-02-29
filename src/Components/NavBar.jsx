@@ -6,7 +6,7 @@ export default function NavBar() {
 
             <div className="flex space-x-2">
                 <Link to="/">
-                    <span className="text-2xl font-bold font-Playfair">Treborg</span>
+                    <span className="text-2xl font-bold font-Playfair">Treborg.</span>
                 </Link>
             </div>
 

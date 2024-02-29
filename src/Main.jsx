@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './Index.css'
+import '/src/Index.css'
 
-import ErrorPage from './Components/Error-page'
-import Test from './Test'
-import Home from './HomePage'
+import ErrorPage from '/src/Components/Error-page'
+import Test from '/src/Test'
+import Home from './Pages/HomePage'
 
 import {
   createBrowserRouter,
