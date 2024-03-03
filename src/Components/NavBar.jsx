@@ -19,7 +19,7 @@ export default function NavBar() {
     }, [isOpen]);
 
     return (
-        <nav className="sticky top-0 flex flex-wrap items-center justify-between md:mx-auto p-6 md:px-20 xl:px-36 font-RaleWay text-zinc-200 bg-zinc-900" ref={menuRef}>
+        <nav className="sticky top-0 flex flex-wrap items-center justify-between md:mx-auto p-6 md:px-20 xl:px-36 font-RaleWay text-zinc-200 bg-zinc-900 z-10" ref={menuRef}>
 
             <div className="flex space-x-2">
                 <span className="text-2xl font-bold font-Playfair">Treborg.</span>

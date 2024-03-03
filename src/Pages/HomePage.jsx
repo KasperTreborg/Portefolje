@@ -1,8 +1,45 @@
+import React, { useEffect, useRef } from 'react';
 
 import NavBar from '/src/Components/NavBar'
 import ProjectList from '/src/Components/ProjectList'
 
 export default function Home() {
+
+    const aboutRef = useRef(null);
+    const contactRef = useRef(null);
+
+    const para1Ref = useRef(null);
+    const para2Ref = useRef(null);
+    const para3Ref = useRef(null);
+    const para4Ref = useRef(null);
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            } else {
+                entry.target.classList.remove('fade-in');
+            }
+            });
+        },
+        {
+            threshold: 0.1
+        }
+        );
+        observer.observe(aboutRef.current);
+        observer.observe(contactRef.current);
+        observer.observe(para1Ref.current);
+        observer.observe(para2Ref.current);
+        observer.observe(para3Ref.current);
+        observer.observe(para4Ref.current);
+
+        return () => {
+        observer.disconnect();
+        };
+    }, []);
 
     return (
         <div className="relative text-zinc-200">
@@ -25,13 +62,16 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Scroll page: */}
-            <div id="about" className="top-0 h-screen flex flex-col items-center justify-center">
-                <h2 className="text-8xl font-Playfair text-">ABOUT</h2>
+            <div id="about" className="px-36 pt-20 top-0 flex flex-col bg-zinc-800" style={{height: '95vh'}}>
+                <h2 ref={aboutRef} className="text-8xl font-Playfair">Background</h2>
+                <p ref={para1Ref} className="text-2xl pt-10">I am a 22 year old student at the University of Bergen.</p>
+                <p ref={para2Ref} className="text-2xl pt-2">I have a passion for programming and web development, and I am currently looking for internships and job opportunities in the field.</p>
+                <p ref={para3Ref} className="text-2xl pt-2">I have experience with HTML, CSS, JavaScript, React, Node.js, PHP, MySQL, and more. I am also familiar with Python, C#, and Java.</p>
+                <p ref={para4Ref} className="text-2xl pt-2">I am a quick learner and I am always looking to expand my knowledge and skillset.</p>
             </div>
 
-            <div id="contact" className="top-0 h-screen flex flex-col items-center justify-center">
-                <h2 className="text-8xl">CONTACT</h2>
+            <div id="contact" className="px-36 pt-20 top-0 flex flex-col bg-zinc-700" style={{height: '95vh'}}>
+                <h2 ref={contactRef} className="text-8xl font-Playfair">Contact</h2>
             </div>
         </div>
     )

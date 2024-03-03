@@ -60,6 +60,12 @@ li {
   animation: pulse 1s infinite;
 }
 
-#home {
-  height: 95vh;
+.fade-in {
+  animation: fadeIn ease 1s both;
+  animation-delay: calc(var(--order) * 0.8s);
+}
+
+@keyframes fadeIn {
+  0% {opacity:0; transform: translateX(-20%);}
+  100% {opacity:1; transform: translateX(0);}
 }
