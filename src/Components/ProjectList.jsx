@@ -29,22 +29,22 @@ export default function ProjectList() {
             <span className="lg:text-4xl lg:pb-2 xl:text-5xl xl:pb-5 2xl:text-5xl 2xl:pb-6 font-RaleWay lightUpList">Projects :</span>
             <ul className="listOfProjects">
                 <a href="https://github.com/KasperTreborg/portefolje" target="_blank">
-                    <li onMouseOver={hackerHover} data-value="PORTFOLIO" className="lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-t-2 border-gray-500 hover:bg-zinc-800">
+                    <li onMouseOver={hackerHover} data-value="PORTFOLIO" className="py-2 lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-t-2 border-gray-500 hover:bg-zinc-800">
                         PORTFOLIO
                     </li>
                 </a>
                 <a href="https://github.com/KasperTreborg/sortingvisualizer" target="_blank">
-                    <li onMouseOver={hackerHover} data-value="SORTING_VISUALIZER" className="lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
+                    <li onMouseOver={hackerHover} data-value="SORTING_VISUALIZER" className="py-2 lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
                         SORTING_VISUALIZER
                     </li>
                 </a>
                 <a href="https://github.com/KasperTreborg/INF273" target="_blank">
-                    <li onMouseOver={hackerHover} data-value="META_HEURISTIC" className="lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
+                    <li onMouseOver={hackerHover} data-value="META_HEURISTIC" className="py-2 lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
                         META_HEURISTIC
                     </li>
                 </a>
                 <a href="https://github.com/KasperTreborg/INF112-Spill" target="_blank">
-                    <li onMouseOver={hackerHover} data-value="ASTRO_ADVENTURE" className="lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
+                    <li onMouseOver={hackerHover} data-value="ASTRO_ADVENTURE" className="py-2 lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-gray-500 hover:bg-zinc-800">
                         ASTRO_ADVENTURE
                     </li>
                 </a>
