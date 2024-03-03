@@ -66,6 +66,13 @@ li {
 }
 
 @keyframes fadeIn {
-  0% {opacity:0; transform: translateX(-20%);}
-  100% {opacity:1; transform: translateX(0);}
+  0% {opacity:0; filter: blur(1px); transform: translateX(-20%);}
+  100% {opacity:1; filter: blur(0); transform: translateX(0);}
+}
+
+@media(prefers-reduced-motion) {
+  .fade-in {
+    animation:none;
+  }
+
 }

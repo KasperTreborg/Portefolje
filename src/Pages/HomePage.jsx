@@ -5,48 +5,28 @@ import ProjectList from '/src/Components/ProjectList'
 
 export default function Home() {
 
-    const aboutRef = useRef(null);
-    const contactRef = useRef(null);
-
-    const para1Ref = useRef(null);
-    const para2Ref = useRef(null);
-    const para3Ref = useRef(null);
-    const para4Ref = useRef(null);
-
-
     useEffect(() => {
-        const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            } else {
-                entry.target.classList.remove('fade-in');
-            }
-            });
-        },
-        {
-            threshold: 0.1
-        }
-        );
-        observer.observe(aboutRef.current);
-        observer.observe(contactRef.current);
-        observer.observe(para1Ref.current);
-        observer.observe(para2Ref.current);
-        observer.observe(para3Ref.current);
-        observer.observe(para4Ref.current);
+        const obeserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in')
+                } else {
+                    entry.target.classList.remove('fade-in')
+                }
 
-        return () => {
-        observer.disconnect();
-        };
-    }, []);
+            });
+        });
+        
+        const hiddenElements = document.querySelectorAll('#fadeIn');
+        hiddenElements.forEach((el) => obeserver.observe(el));
+    });
 
     return (
         <div className="relative text-zinc-200">
             <div id='top' />
             <NavBar />
-            <div id="home" className="h-screen">
-            <div id="mainContent" className="pt-40 flex flex-col xl:flex-row xl:items-start flex-wrap xl:justify-between mx-auto p-6 md:px-20 xl:px-36 font-RaleWay">
+            <div id="home" style={{height: '95vh'}}>
+                <div id="mainContent" className="pt-40 flex flex-col xl:flex-row xl:items-start flex-wrap xl:justify-between mx-auto p-6 md:px-20 xl:px-36 font-RaleWay">
 
                     <div id="nameAndIntro" className="flex flex-col">
                         <span className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl pb-6 text-left font-Playfair">I'm Kasper Treborg</span>
@@ -62,16 +42,16 @@ export default function Home() {
                 </div>
             </div>
 
-            <div id="about" className="px-36 pt-20 top-0 flex flex-col bg-zinc-800" style={{height: '95vh'}}>
-                <h2 ref={aboutRef} className="text-8xl font-Playfair">Background</h2>
-                <p ref={para1Ref} className="text-2xl pt-10">I am a 22 year old student at the University of Bergen.</p>
-                <p ref={para2Ref} className="text-2xl pt-2">I have a passion for programming and web development, and I am currently looking for internships and job opportunities in the field.</p>
-                <p ref={para3Ref} className="text-2xl pt-2">I have experience with HTML, CSS, JavaScript, React, Node.js, PHP, MySQL, and more. I am also familiar with Python, C#, and Java.</p>
-                <p ref={para4Ref} className="text-2xl pt-2">I am a quick learner and I am always looking to expand my knowledge and skillset.</p>
+            <div id="about" className="px-36 pt-20 top-0 flex flex-col" style={{height: '95vh'}}>
+                <h2 id="fadeIn" className="text-8xl font-Playfair">Background</h2>
+                <p id="fadeIn" className="text-2xl pt-10">I am a 22 year old student at the University of Bergen.</p>
+                <p id="fadeIn" className="text-2xl pt-2">I have a passion for programming and web development, and I am currently looking for internships and job opportunities in the field.</p>
+                <p id="fadeIn" className="text-2xl pt-2">I have experience with HTML, CSS, JavaScript, React, Node.js, PHP, MySQL, and more. I am also familiar with Python, C#, and Java.</p>
+                <p id="fadeIn" className="text-2xl pt-2">I am a quick learner and I am always looking to expand my knowledge and skillset.</p>
             </div>
 
-            <div id="contact" className="px-36 pt-20 top-0 flex flex-col bg-zinc-700" style={{height: '95vh'}}>
-                <h2 ref={contactRef} className="text-8xl font-Playfair">Contact</h2>
+            <div id="contact" className="px-36 pt-20 top-0 flex flex-col" style={{height: '95vh'}}>
+                <h2 id="fadeIn" className="text-8xl font-Playfair">Contact</h2>
             </div>
         </div>
     )
