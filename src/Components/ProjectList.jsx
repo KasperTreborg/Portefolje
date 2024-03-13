@@ -26,7 +26,7 @@ export default function ProjectList() {
     };
     return (
         <div className='flex flex-col'>
-            <span className="lg:text-4xl lg:pb-2 xl:text-5xl xl:pb-5 2xl:text-5xl 2xl:pb-6 font-RaleWay lightUpList">Projects :</span>
+            <span className="text-2xl pt-2 md:pt-0 lg:text-4xl lg:pb-2 xl:text-5xl xl:pb-5 2xl:text-5xl 2xl:pb-6 font-RaleWay lightUpList">Projects :</span>
             <ul className="listOfProjects">
                 <a href="https://github.com/KasperTreborg/portefolje" target="_blank">
                     <li onMouseOver={hackerHover} data-value="PORTFOLIO" className="py-2 lg:text-xl lg:py-3 xl:text-2xl xl:py-4 2xl:py-6 2xl:text-3xl border-b-2 border-t-2 border-gray-500 hover:bg-zinc-800">

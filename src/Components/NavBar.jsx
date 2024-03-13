@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,12 @@ export default function NavBar() {
     }, [isOpen]);
 
     return (
-        <nav className="sticky top-0 flex flex-wrap items-center justify-between md:mx-auto p-6 md:px-20 xl:px-36 font-RaleWay text-zinc-200 bg-zinc-900 z-10" ref={menuRef}>
+        <nav className="sticky top-0 flex flex-wrap items-center justify-between md:mx-auto p-6 lg:px-20 xl:px-36 font-RaleWay text-zinc-200 bg-zinc-900 z-10" ref={menuRef}>
 
             <div className="flex space-x-2">
-                <span className="text-2xl font-bold font-Playfair">Treborg.</span>
+                <Link to="/">
+                    <span className="text-2xl font-bold font-Playfair">Treborg.</span>
+                </Link>
             </div>
 
             <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -32,15 +35,15 @@ export default function NavBar() {
             </button>
 
             <div className="hidden lg:flex space-x-14 text-xl">
-                <a href="#top" className="navbar-link">Home</a>
-                <a href="#about" className="navbar-link">About</a>
-                <a href="#contact" className="navbar-link">Contact</a>
+                <Link to="/" className="navbar-link">Home</Link>
+                <Link to="/" className="navbar-link">CV</Link>
+                <Link to="/" className="navbar-link">Contact</Link>
             </div>
 
-            <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden absolute top-full right-0 w-24 mr-6 md:mr-20 bg-zinc-800`}>
-                <a href="#home" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>Home</a>
-                <a href="#about" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>About</a>
-                <a href="#contact" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>Contact</a>
+            <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden absolute top-full right-0 w-24 mr-6 bg-zinc-800`}>
+                <Link to="/" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>Home</Link>
+                <Link to="/" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>CV</Link>
+                <Link to="/" className="block py-2 px-4 hover:bg-zinc-700" onClick={() => setIsOpen(false)}>Contact</Link>
             </div>
 
         </nav>
